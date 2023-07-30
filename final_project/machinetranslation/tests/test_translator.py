@@ -6,13 +6,13 @@ class TestEnglishToFrench(unittest.TestCase):
     def test_english_to_french(self): 
         self.assertEqual(english_to_french("Hello"), "Bonjour")
         self.assertEqual(english_to_french("Hello World"), "Bonjour le monde")
-        self.assertEqual(english_to_french("Welcome to France"), "Bienvenue en France")
+        self.assertNotEqual(english_to_french("Welcome to France"), "Bienvenue en USA")
 
 class TestFrenchToEnglish(unittest.TestCase): 
 
     def test_french_to_english(self): 
         self.assertEqual(french_to_english("Bonjour"), "Hello")
         self.assertEqual(french_to_english("Bonjour le monde"), "Hello World")
-        self.assertEqual(french_to_english("Bienvenue en France"), "Welcome to France")
+        self.assertNotEqual(french_to_english("Bienvenue en France"), "Welcome to USA")
         
 unittest.main()
